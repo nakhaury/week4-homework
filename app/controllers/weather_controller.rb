@@ -1,14 +1,8 @@
 require 'open-uri' #Route, Controller, Action, View (RCAV)
 
-class PagesController < ApplicationController #names of classes are the only thing that are capitalized
+class WeatherController < ApplicationController #names of classes are the only thing that are capitalized
 
   def search # if no render looks for search.html which has to be in views folder and has to be under weather (same name as class name)
-  end
-
-  def show
-  end
-
-  def index
   end
 
   def conditions
@@ -17,14 +11,6 @@ class PagesController < ApplicationController #names of classes are the only thi
     @json_data = open(url).read # @sign makes it usable from other controllers (makes it global)
     @data = JSON.parse (@json_data)
                                 # <%= is the syntax for ruby variable - look at conditions.html
-  end
-
-  def index
-    @product_list = ["Helicopter Toy", "Harry Potter", "iPhone", "Sofa", "Coffee Mug"]
-  end
-
-  def show
-    @product = "iPhone"
   end
 
 end
